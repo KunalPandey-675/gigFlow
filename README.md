@@ -7,6 +7,12 @@ Full-stack lead management app with role-based access, lead tracking, and a Reac
 - Server: Node.js, Express 5, TypeScript, MongoDB
 - State/data: TanStack Query, Zustand
 
+## Features
+- Role-based access for admin and sales users
+- Lead CRUD with status/source, search, and pagination
+- Auth flows with protected routes
+- Admin-only seed endpoints for demo data
+
 ## Project Structure
 - client/ - React SPA
 - server/ - Express API
