@@ -8,14 +8,18 @@ import { apiRouter } from "./routes/index.js";
 
 const app = express();
 
+const normalizeOrigin = (origin: string): string => origin.replace(/\/+$/, "");
+
 const allowedOrigins = env.CLIENT_URL.split(",")
-  .map((origin) => origin.trim())
+  .map((origin) => normalizeOrigin(origin.trim()))
   .filter(Boolean);
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      const normalizedOrigin = origin ? normalizeOrigin(origin) : "";
+
+      if (!origin || allowedOrigins.includes(normalizedOrigin)) {
         return callback(null, true);
       }
 
