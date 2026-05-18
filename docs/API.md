@@ -182,23 +182,6 @@ Response 200:
 { "success": true, "message": "Lead deleted successfully" }
 ```
 
-## Seed (no auth)
-### Seed Leads
-POST /seed/leads
-
-Response 201:
-```json
-{ "success": true, "message": "Successfully seeded 20 leads", "data": { "count": 20 } }
-```
-
-### Clear Leads
-DELETE /seed/leads
-
-Response 200:
-```json
-{ "success": true, "message": "Cleared 20 leads", "data": { "count": 20 } }
-```
-
 ## Health
 GET /health
 
